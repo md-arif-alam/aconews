@@ -50,7 +50,7 @@ function Search() {
     setIsLoading(true);
     setError(null);
 
-    fetch(`http://localhost:5000/search/q=${searchtype}?page=${page}&pageSize=${pageSize}`)
+    fetch(`https://aconews-server-murex.vercel.app/search/q=${searchtype}?page=${page}&pageSize=${pageSize}`)
       .then((response) => {
         if (response.ok) {
           return response.json();

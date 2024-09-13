@@ -32,7 +32,7 @@ function Headlines() {
 
   const fetchNews = async (page) => {
     const categoryParam = params.category ? `&category=${params.category}` : "technology";
-    fetch(`http://localhost:5000/top-headlines?lang=en${categoryParam}&page=${page}&max=${newsPerPage}`)
+    fetch(`https://aconews-server-murex.vercel.app/top-headlines?lang=en${categoryParam}&page=${page}&max=${newsPerPage}`)
       .then((response) => {
         if (response.ok) {
           return response.json();

@@ -32,7 +32,7 @@ function CountryNews() {
 
 
   const fetchNews = async (page) => {
-    fetch(`http://localhost:5000/country/${params.iso}?page=${page}&max=${newsPerPage}`)
+    fetch(`https://aconews-server-murex.vercel.app/country/${params.iso}?page=${page}&max=${newsPerPage}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
