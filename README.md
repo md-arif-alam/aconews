@@ -1,4 +1,4 @@
-**ACONews is a cutting-edge news website designed to deliver the latest news headlines from around the globe. Utilizing the GNews.io RESTful API, this application is built with a modern tech stack including React.js, TailwindCSS, and Shadcn for a seamless and visually appealing user experience. The backend is powered by Express and Node.js, providing a robust and scalable API service.**
+**Aconews is a cutting-edge news website designed to deliver the latest news headlines from around the globe. Utilizing the GNews.io RESTful API, this application is built with a modern tech stack including React.js, TailwindCSS, and Shadcn for a seamless and visually appealing user experience. The backend is powered by Express and Node.js, providing a robust and scalable API service.**
 
 
 ***Table of Contents***
@@ -218,4 +218,8 @@ bash
     git push origin feature/your-feature
 
     Create a Pull Request: Go to the repository on GitHub and create a new pull request.
+
+
+
+![Screenshot (1016)](https://github.com/user-attachments/assets/142872e1-84b6-4c89-b5cf-55f0d795a833)
 
