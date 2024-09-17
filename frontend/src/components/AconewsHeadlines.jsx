@@ -13,7 +13,7 @@ function Headlines() {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const newsPerPage = 10; // Number of news items per page
+  const newsPerPage = 6; // Number of news items per page
 
   useEffect(() => {
     setIsLoading(true);
@@ -21,7 +21,7 @@ function Headlines() {
     fetchNews(currentPage);
   }, [currentPage]);
 
-  const totalPages = Math.ceil(totalResults / newsPerPage);
+  const totalPages = Math.ceil((totalResults / newsPerPage) / 1000);
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {

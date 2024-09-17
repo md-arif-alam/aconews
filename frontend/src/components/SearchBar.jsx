@@ -33,7 +33,7 @@ function Search() {
   const [error, setError] = useState(null);
   const [searchValue, setSearchValue] = useState("");
 
-  const pageSize = 10;
+  const pageSize = 6;
 
   let searchtype = "";
 

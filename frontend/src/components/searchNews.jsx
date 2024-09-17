@@ -39,7 +39,7 @@ function SearchNews() {
     setPage(page + 1);
   }
 
-  let pageSize = 10;
+  let pageSize = 6;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -111,7 +111,7 @@ function SearchNews() {
       {!isLoading && articles.length > 0 && (
         <div className="pagination flex justify-center gap-14 my-10 items-center mb-5">
           <button disabled={page <= 1} className='pagination-btn' onClick={() => handlePrev}>Prev</button>
-          <p className='font-semibold opacity-80'>{page} of {Math.ceil(totalResults / pageSize)}</p>
+          <p className='font-semibold opacity-80'>{page} of {Math.ceil((totalResults / pageSize) / 1000)}</p>
           <button className='pagination-btn' disabled={page >= Math.ceil(totalResults / pageSize)} onClick={() => handleNext}>Next</button>
         </div>
       )}

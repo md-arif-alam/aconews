@@ -47,9 +47,9 @@ function Header() {
 
 
         <ul className={active ? "nav-ul z-50 flex gap-4 md:gap-14 xs:gap-12 lg:basis-3/4 md:basis-4/6 md:justify-end active" : " nav-ul flex gap-14 lg:basis-3/6 md:basis-4/6 justify-end"}>
-          <li><Link className="no-underline font-semibold text-gray-400 hover:text-blue-700" to="/search" onClick={() => { setActive(!active) }}>Search</Link></li>
-          <li><Link className="no-underline font-semibold text-gray-400 hover:text-blue-700" to="/" onClick={() => { setActive(!active) }}>News</Link></li>
-          <li className="dropdown-li "><Link className="no-underline font-semibold flex items-center gap-2 text-gray-400 hover:text-blue-700" onClick={() => { setShowCategoryDropdown(!showCategoryDropdown); setShowCountryDropdown(false) }}>Headlines <FontAwesomeIcon className={showCategoryDropdown ? "down-arrow-icon down-arrow-icon-active" : "down-arrow-icon"} icon={faChevronDown} /></Link>
+          <li><Link className="no-underline font-semibold  hover:text-blue-500" to="/search" onClick={() => { setActive(!active) }}>Search</Link></li>
+          <li><Link className="no-underline font-semibold  hover:text-blue-500" to="/" onClick={() => { setActive(!active) }}>News</Link></li>
+          <li className="dropdown-li "><Link className="no-underline font-semibold flex items-center gap-2  hover:text-blue-500" onClick={() => { setShowCategoryDropdown(!showCategoryDropdown); setShowCountryDropdown(false) }}>Headlines <FontAwesomeIcon className={showCategoryDropdown ? "down-arrow-icon down-arrow-icon-active" : "down-arrow-icon"} icon={faChevronDown} /></Link>
 
             <ul className={showCategoryDropdown ? "dropdown p-2 show-dropdown overflow-y-scroll no-scrollbar" : "dropdown p-2 overflow-y-scroll no-scrollbar"}>
               {categories.map((element, index) => {
@@ -67,7 +67,7 @@ function Header() {
               })}
             </ul>
           </li>
-          <li className="dropdown-li"><Link className="no-underline font-semibold flex items-center gap-2 text-gray-400 hover:text-blue-700" onClick={() => { setShowCountryDropdown(!showCountryDropdown); setShowCategoryDropdown(false) }}>Country <FontAwesomeIcon className={showCountryDropdown ? "down-arrow-icon down-arrow-icon-active" : "down-arrow-icon"} icon={faChevronDown} /></Link>
+          <li className="dropdown-li"><Link className="no-underline font-semibold flex items-center gap-2  hover:text-blue-500" onClick={() => { setShowCountryDropdown(!showCountryDropdown); setShowCategoryDropdown(false) }}>Country <FontAwesomeIcon className={showCountryDropdown ? "down-arrow-icon down-arrow-icon-active" : "down-arrow-icon"} icon={faChevronDown} /></Link>
             <ul className={showCountryDropdown ? "dropdown p-2 show-dropdown overflow-y-scroll no-scrollbar" : "dropdown p-2 overflow-y-scroll no-scrollbar"}>
               {countries.map((element, index) => {
                 return (
@@ -88,7 +88,7 @@ function Header() {
               })}
             </ul>
           </li>
-          <li><Link className="no-underline font-semibold text-gray-400 hover:text-blue-700" to="/about" onClick={() => { setActive(!active) }}>About</Link></li>
+          <li><Link className="no-underline font-semibold  hover:text-blue-500" to="/about" onClick={() => { setActive(!active) }}>About</Link></li>
           <li>
 
             <Link className="no-underline font-semibold" to="#" onClick={() => { toggleTheme() }}>

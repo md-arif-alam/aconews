@@ -322,6 +322,4 @@ twoLetterISO.forEach((element) => {
   countries.push(obj);
 });
 
-console.log(countries);
-
 export default countries;

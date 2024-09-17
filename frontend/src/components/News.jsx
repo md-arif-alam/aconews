@@ -2,8 +2,7 @@ import { React, useState, useEffect } from 'react';
 import Loader from './Loader';
 import NewsCards from './NewsCards';
 import { useParams } from 'react-router-dom';
-
-
+import { TypeAnimation } from 'react-type-animation';
 function News() {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +10,7 @@ function News() {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const newsPerPage = 10; // Number of news items per page
+  const newsPerPage = 6; // Number of news items per page
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,7 +18,7 @@ function News() {
     fetchNews(currentPage);
   }, [currentPage]);
 
-  const totalPages = Math.ceil(totalResults / newsPerPage);
+  const totalPages = Math.ceil((totalResults / newsPerPage) / 1000);
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
@@ -55,10 +54,52 @@ function News() {
       });
   }
 
+  let arr = news.map((n) => {
+    return n.title
+  })
   return (
     <>
-      {error && <div className="text-red-500 mb-4">{error}</div>}
+      {error && <div className="text-red-500 mb-4 ">{error}</div>}
+
+      <div>
+        {
+          !isLoading == true ? (
+
+
+            <main className="mt-20  dark: bg-gradient-to-l dark:from-gray-500 via-gray-200 to-gray-100 hero">
+              <section className="container flex h-[500px] flex-col items-center justify-center md:h-[470px] heroheight heros">
+                <p className=" headingyellow text-yellow-200 font-bold underline decoration-wavy absolute ">
+                  Breaking News
+                </p>
+                <div className="grid grid-cols-3 items-center gap-10 md:grid-cols-1 ">
+
+                  <div
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                    className="flex flex-col items-center gap-6 text-center font-bold text-4x"
+                  >
+                    <div className="txt ">
+                      <TypeAnimation
+                        sequence={[...arr]}
+                        wrapper="span"
+                        speed={160}
+                        style={{ display: 'inline-block' }}
+                        repeat={10}
+                        className='text-red-600 bg-neutral-400 text-2xl font-bold`'
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+
+          ) : (<Loader />)
+        }
+      </div>
+
       <div className="my-10 cards grid lg:place-content-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xs:grid-cols-1 xs:gap-4 md:gap-10 lg:gap-14 md:px-16 xs:p-3">
+
         {!isLoading ? (
           news.length > 0 ? (
             news.map((element, index) => (
@@ -74,31 +115,35 @@ function News() {
               />
             ))
           ) : (
-            <p>No news articles found for this criteria.</p>
+            <p>No news articles found for this criteria. May be its due to the maximum limit crossed</p>
           )
         ) : (
           <Loader />
         )}
       </div>
       {!isLoading && news.length > 0 && (
+        <div>
+          <div className="flex justify-center mt-4 mb-5">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              className={`px-4 py-2 mx-2 rounded ${currentPage === 1 ? 'bg-gray-400' : 'bg-blue-500 text-white'}`}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span className="px-4 py-2">{`Page ${currentPage} of ${totalPages}`}</span>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              className={`px-4 py-2 mx-2 rounded ${currentPage === totalPages ? 'bg-gray-400' : 'bg-blue-500 text-white'}`}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
 
-        <div className="flex justify-center mt-4 mb-5">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            className={`px-4 py-2 mx-2 rounded ${currentPage === 1 ? 'bg-gray-400' : 'bg-blue-500 text-white'}`}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span className="px-4 py-2">{`Page ${currentPage} of ${totalPages}`}</span>
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            className={`px-4 py-2 mx-2 rounded ${currentPage === totalPages ? 'bg-gray-400' : 'bg-blue-500 text-white'}`}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
         </div>
+
+
 
       )}
     </>
