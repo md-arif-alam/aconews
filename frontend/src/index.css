@@ -70,6 +70,7 @@ body {
     background-size: cover;
     /* backdrop-filter: blur(); */
     border-bottom: 0.6px solid rgb(85, 85, 85);
+  
     
 }
 
@@ -77,26 +78,24 @@ body {
     position:  relative;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(9px);
+    backdrop-filter: blur(10px)  brightness(0.5);
+ 
     /* transition: 100ms backdrop-filter linear; */
 }
 
 .heros p{
-    background: #4666FF;
-    border-radius: 5px;
-    padding: 10px;
     position: absolute;
-    /* top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; */
     margin-bottom: 150px;
 }
 .txt{
-    /* background: #b95656;
-    color: rgb(223, 103, 103); */
     position: absolute;
-    margin-left: 4rem;
+    width: 700px;
+    height: 150px;
+    padding: 10px;
+    text-wrap: wrap;
+    border: 2px solid rgb(148, 148, 148);
+    box-shadow: #ffffff;
+
 } 
 
 .container {
@@ -375,6 +374,7 @@ ul li ul li a:hover {
         margin-bottom: 1rem;
         font-weight: 600;
       }
+
 }
 
 @media only screen and (min-width: 640px) and (max-width: 689px) {
@@ -382,6 +382,9 @@ ul li ul li a:hover {
         justify-content: space-evenly !important;
         padding: 0 5% !important;
     }
+ 
+
+ 
 }
 
 @media (max-width: 689px) {
@@ -421,6 +424,15 @@ ul li ul li a:hover {
     .everything-card {
         width: 450px;
     }
+    .txt{
+        margin-left: 1rem;
+        width:650px;
+        height: 250px;
+        padding: 6px;
+        padding-bottom: 3px;      
+                
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -441,12 +453,7 @@ img {
     }
   
 }
-@media (min-width:606px) and (max-width:430){
-    footer{
-       margin-top: 20px;
-    }
-      
-}
+
 
 @media (min-width: 300px) {
     .headingyellow{
@@ -469,6 +476,7 @@ img {
     .heros p{
       margin-bottom: 300px;
     }
+  
 }
 @media (min-width: 400px) {
     .headingyellow{
@@ -493,6 +501,20 @@ img {
       }
  
 
+
 }
+
+@media (max-width:750px){
+    .txt{
+        margin-left: 5rem;
+            width: 450px;
+            height: 150px;
+            padding: 6px;
+            padding-bottom: 3px;
+            text-wrap: wrap;
+        
+    }
+}
+
 
 

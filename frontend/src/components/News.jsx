@@ -66,9 +66,9 @@ function News() {
           !isLoading == true ? (
 
 
-            <main className="mt-20  dark: bg-gradient-to-l dark:from-gray-500 via-gray-200 to-gray-100 hero">
+            <main className="mt-20 hero">
               <section className="container flex h-[500px] flex-col items-center justify-center md:h-[470px] heroheight heros">
-                <p className=" headingyellow text-yellow-200 font-bold underline decoration-wavy absolute ">
+                <p className=" headingyellow text-gray-300 font-bold underline decoration-yellow-50 absolute ">
                   Breaking News
                 </p>
                 <div className="grid grid-cols-3 items-center gap-10 md:grid-cols-1 ">
@@ -77,7 +77,7 @@ function News() {
                     data-aos="fade-right"
                     data-aos-duration="1000"
                     data-aos-once="true"
-                    className="flex flex-col items-center gap-6 text-center font-bold text-4x"
+                    className="flex flex-col items-center gap-6 text-center text-4x"
                   >
                     <div className="txt ">
                       <TypeAnimation
@@ -86,7 +86,7 @@ function News() {
                         speed={160}
                         style={{ display: 'inline-block' }}
                         repeat={10}
-                        className='text-red-600 bg-neutral-400 text-2xl font-bold`'
+                        className='text-yellow-300 text-2xl md:text:xl sm:text-lg font-extralight`'
                       />
                     </div>
                   </div>
